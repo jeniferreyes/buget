@@ -2,6 +2,7 @@ const preguntarPresupuesto = prompt('Ingresa tu presupuesto');
 class Presupuesto {
 	constructor(presupuesto) {
 		this.pres = parseInt(presupuesto);
+		
 	}
 }
 class UI {
@@ -9,13 +10,20 @@ class UI {
 		const presupuest = document.querySelector('#total');
 		presupuest.innerHTML = `${cant}`;
 	}
-    // imprimirGasto(gasto){
-    //     const gasto = document.querySelector('#gasto');
-    //     gasto.innerHTML = `${gasto}`
-    // }
+	imprimirGastos(gasto, total){
+		const gastos = querySelector('#gastos');
+		
+		const liGasto = document.createElement('li');
+		liGasto.innerHTML = `${gasto}<br>
+		${total}`;
+		
+		gastos.appendChild(li);
+	}
 }
-// gasto = new Presupuesto(gasto)
-if (preguntarPresupuesto === null || preguntarPresupuesto.length==0) {
+
+
+function imprimir_presupuesto(){
+	if (preguntarPresupuesto === null || preguntarPresupuesto.length==0) {
     alert('Error, ingrese un dato válido')
 	window.location.reload();
 } else {
@@ -24,3 +32,21 @@ if (preguntarPresupuesto === null || preguntarPresupuesto.length==0) {
 	ui.imprimirPresupuesto(cantidadPresupuesto.pres);
 
 }
+}
+imprimir_presupuesto()
+
+const agregar = document.querySelector('#boton');
+
+agregar.addEventListener('click', function(evento){
+	evento.preventDefault();
+	const gastoN = document.querySelector('#gasto').value;
+	const gastoTotal = document.querySelector('#cantidad').value;
+	const ui = new UI();
+	if(gastoN==''|| gastoTotal==''){
+		alert('error ingrese un dato valido')
+	}else{
+		ui.imprimirGastos(gastoN, gastoTotal)
+	}
+	
+
+});
