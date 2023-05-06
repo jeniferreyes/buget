@@ -11,13 +11,13 @@ class UI {
 		presupuest.innerHTML = `${cant}`;
 	}
 	imprimirGastos(gasto, total){
-		const gastos = querySelector('#gastos');
+		const gastos = document.querySelector('#gastos ul')
 		
 		const liGasto = document.createElement('li');
 		liGasto.innerHTML = `${gasto}<br>
 		${total}`;
 		
-		gastos.appendChild(li);
+		gastos.appendChild(liGasto);
 	}
 }
 
@@ -38,6 +38,7 @@ imprimir_presupuesto()
 const agregar = document.querySelector('#boton');
 
 agregar.addEventListener('click', function(evento){
+	
 	evento.preventDefault();
 	const gastoN = document.querySelector('#gasto').value;
 	const gastoTotal = document.querySelector('#cantidad').value;
@@ -45,7 +46,9 @@ agregar.addEventListener('click', function(evento){
 	if(gastoN==''|| gastoTotal==''){
 		alert('error ingrese un dato valido')
 	}else{
-		ui.imprimirGastos(gastoN, gastoTotal)
+
+		ui.imprimirGastos(gastoN, gastoTotal);
+
 	}
 	
 
