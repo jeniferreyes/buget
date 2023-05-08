@@ -2,7 +2,20 @@ const preguntarPresupuesto = prompt('Ingresa tu presupuesto');
 class Presupuesto {
 	constructor(presupuesto) {
 		this.pres = parseInt(presupuesto);
-		
+		this.restante = Number(presupuesto);
+		this.gastos = [];
+	}
+
+	agregarGasto(gasto){
+		this.gastos = [...this.gastos, gasto];
+
+	}
+	eliminarGasto(){
+
+	}
+	calcularDif(){
+		const gastado = this.gastos.reduce((total, gasto)=> total+gasto.gastoTotal)
+		this.restante = this.pres - gastado;
 	}
 }
 class UI {
@@ -14,27 +27,25 @@ class UI {
 		const gastos = document.querySelector('#gastos ul')
 		
 		const liGasto = document.createElement('li');
-		liGasto.innerHTML = `${gasto}<br>
-		${total}`;
+		liGasto.innerHTML = `<span class='gasto'>Gasto:${gasto}	Total:${total}</span> `;
 		
 		gastos.appendChild(liGasto);
 	}
+	
 }
 
-
+const ui = new UI();
 function imprimir_presupuesto(){
 	if (preguntarPresupuesto === null || preguntarPresupuesto.length==0) {
-    alert('Error, ingrese un dato válido')
-	window.location.reload();
+		
+		window.location.reload();
 } else {
 	cantidadPresupuesto = new Presupuesto(preguntarPresupuesto);
-	const ui = new UI();
 	ui.imprimirPresupuesto(cantidadPresupuesto.pres);
 
 }
 }
 imprimir_presupuesto()
-
 const agregar = document.querySelector('#boton');
 
 agregar.addEventListener('click', function(evento){
@@ -42,14 +53,14 @@ agregar.addEventListener('click', function(evento){
 	evento.preventDefault();
 	const gastoN = document.querySelector('#gasto').value;
 	const gastoTotal = document.querySelector('#cantidad').value;
-	const ui = new UI();
+	
 	if(gastoN==''|| gastoTotal==''){
-		alert('error ingrese un dato valido')
+		// const mensaje1 = "error, rellene los campos";
+		ui.imprimirAlerta1(mensaje1);
 	}else{
 
 		ui.imprimirGastos(gastoN, gastoTotal);
 
 	}
 	
-
 });

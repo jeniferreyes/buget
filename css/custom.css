@@ -1,51 +1,56 @@
 body {
-    background: linear-gradient(to right, #819fba, #b2dd9c, rgb(135, 180, 176));    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  header {
-    margin: 40px 0;
-  }
-  
-  .container{
-    margin: 0 auto;
-    max-width: 1024px;
-    padding: 0 20px;
-  }
-  
-  .contenido {
-    padding: 10px;
-  }
-  
-  .contenido-principal {
-    background-color: rgba(255, 255, 255, 0.877);
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 440px;
-    margin: 0 auto;
-    height: auto;
+  background: linear-gradient(to right, #819fba, #b2dd9c, rgb(135, 180, 176));
+  font-family: 'Courier New', Courier, monospace;
+}
 
-  }
-  input{
-    padding: 6px;
-    border: 0px;
-    background-color: rgb(222, 228, 227);
-    border-radius: 10px;
-    color: rgb(65, 65, 65);
-    width: 250px;
-    height: 25px;
-    margin-bottom: 15px;
+header {
+  margin: 40px 0;
+}
 
-  }
-  button{
-    border: 0px;
-    background-color: rgb(185, 211, 185);
-    box-shadow: 1px 1px 3px rgb(192, 192, 192);
-    width: 50%;
-    height: 35px;
-    border-radius: 18px;
-    cursor: pointer;
-  }
-  .text-center{
-    text-align: center;
-    color: #403B52 ;
-  }
+.container{
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 20px;
+}
+
+.contenido {
+  padding: 10px;
+}
+
+.contenido-principal {
+  background-color: rgba(255, 255, 255, 0.877);
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 440px;
+  margin: 0 auto;
+  height: auto;
+}
+
+input{
+  padding: 0.5em;
+  border: 0px;
+  background-color: rgb(222, 228, 227);
+  border-radius: 10px;
+  color: rgb(65, 65, 65);
+  width: 100%;
+  max-width: 250px;
+  height: 2.5em;
+  margin-bottom: 15px;
+}
+
+button{
+  border: 0px;
+  background-color: rgb(185, 211, 185);
+  box-shadow: 1px 1px 3px rgb(192, 192, 192);
+  width: 100%;
+  max-width: 250px;
+  height: 3.5em;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.text-center{
+  text-align: center;
+  color: #403B52 ;
+}
